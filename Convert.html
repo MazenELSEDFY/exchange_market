@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert</title>
+    <link rel="stylesheet" href="Convert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez0JAbAUY9gbqN5Icr24NR5C1rwyh1Nz6Sz7Q2JfwWZ8eBq1pE2p8c+GGPZdldpe" crossorigin="anonymous">
+</head>
+<body>
+    <div id="HeaderPhoto"></div>
+    <h2 id="CONVERT">CONVERT</h2>
+    <nav>
+        <ul>
+            <li><a href="ExchangeMarket.html">HOME</a></li>
+            <li><a href="AboutUs.html">ABOUT US</a></li>
+            <li><a href="Convert.html">CONVERT</a></li>
+            <li><a href="SEARCH.HTML">SEARCH</a></li>
+        </ul>
+    </nav>
+    <h2>START CONVERTING.......</h2>
+    <form id="conversionForm" action="convert.php" method="post" onsubmit="return validateAndRedirect();">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="passport">Passport Number:</label>
+        <input type="text" id="passport" name="passport" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+        <label for="date">Date of Exchange:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*_-]).{8,}$" title="Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character." required>
+        <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> 
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <label for="amountBefore">Amount Before Conversion:</label>
+        <input type="number" id="amountBefore" name="amountBefore" min="0" required>
+        <label for="fromCurrency">From Currency:</label>
+        <select id="fromCurrency" name="fromCurrency" required>
+            <option value="EGP">EGP</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+        </select>
+        <label for="toCurrency">To Currency:</label>
+        <select id="toCurrency" name="toCurrency" required>
+            <option value="EGP">EGP</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+        </select>
+        <label for="amountAfter">Amount After Conversion:</label>
+        <input type="text" id="amountAfter" name="amountAfter" readonly>
+        <button type="button" onclick="calculateAmountAfter()">Calculate</button>
+        <button type="submit">Submit</button>
+        <button type="reset" id="resetBtn">Reset</button>
+    </form>
+    <a href="#" class="return-to-top">Return to the Top</a>
+    <script src="script.js"></script>
+    <footer>
+        <p>Contact us:</p>
+        <a href="mailto:mazen-elsedfy@outlook.com">info@exchangemarket.com<br></a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank"> Instagram<br></a>
+        Copyright &copy; 2023 MAZEN ELSEDFY
+    </footer>
+</body>
+</html>

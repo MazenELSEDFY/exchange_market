@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exchange Market</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="ExhangeMarketStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez0JAbAUY9gbqN5Icr24NR5C1rwyh1Nz6Sz7Q2JfwWZ8eBq1pE2p8c+GGPZdldpe" crossorigin="anonymous">
+</head>
+<body>
+
+  <div id="HeaderPhoto" class="jumbotron jumbotron-fluid"></div>
+
+  <div class="container-fluid mt-3">
+    <h2 id="HOMETAB">HOME</h2>
+    
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">EXCHANGE MARKET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="ExchangeMarket.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AboutUs.html">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Convert.html">CONVERT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="SEARCH.HTML">SEARCH</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="WELCOMECAPTION" class="text-center mt-3">
+      <p>WELCOME TO THE EXCHANGE MARKET.<br>WE ARE EXCITED TO SEE YOU.<br>HOPE THIS HELPS YOU!!!!</p>
+    </div>
+
+    <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" src="https://sslfxrates.investing.com/index_exchange.php?params&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&inner-text-color=%23000000&currency-name-color=%23000000&header-text-color=%23FFFFFF&force_lang=1"></iframe><br /><div style="width:540px"><a href="http://www.investing.com" target="_blank"><img src="https://wmt-invdn-com.investing.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Exchange Rates are powered by <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div>
+
+    <div class="banner bg-danger text-white text-center p-2">
+      <div>ALERT PRICES HAVE CHANGED!!!!!</div>
+      <div class="exchange-rate" id="usd-rate">USD: Loading...</div>
+      <div class="exchange-rate" id="eur-rate">EUR: Loading...</div>
+      <div class="exchange-rate" id="gbp-rate">GBP: Loading...</div>
+      <div class="exchange-rate" id="egp-rate">EGP: Loading...</div>
+    </div>
+  </div>
+ 
+
+  <footer>
+    <p>Contact us:</p>
+    <a href="mailto:mazen-elsedfy@outlook.com">info@exchangemarket.com<br></a>
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank"> Instagram<br></a>
+    <p>&copy; 2023 Mazen EL SEDFY</p>
+  </footer>
+  <a href="ExchangeMarket.html" class="return-to-top btn btn-dark">Return to the Top</a>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function updateExchangeRates() {
+      fetch('https://open.er-api.com/v6/latest/USD')
+        .then(response => response.json())
+        .then(data => {
+          const usdRate = findExchangeRate(data.rates, 'USD');
+          const eurRate = findExchangeRate(data.rates, 'EUR');
+          const gbpRate = findExchangeRate(data.rates, 'GBP');
+          const egpRate = findExchangeRate(data.rates, 'EGP');
+
+          document.getElementById('usd-rate').innerText = `USD: ${usdRate.toFixed(4)}`;
+          document.getElementById('eur-rate').innerText = `EUR: ${eurRate.toFixed(4)}`;
+          document.getElementById('gbp-rate').innerText = `GBP: ${gbpRate.toFixed(4)}`;
+          document.getElementById('egp-rate').innerText = `EGP: ${egpRate.toFixed(4)}`;
+        })
+        .catch(error => console.error('Error fetching exchange rates:', error));
+    }
+
+    function findExchangeRate(rates, currencyCode) {
+      return rates[currencyCode] || 0;
+    }
+
+    updateExchangeRates();
+    setInterval(updateExchangeRates, 10000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var mybutton = document.querySelector(".return-to-top");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      mybutton.addEventListener("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
+      });
+    });
+  </script>
+
+</body>
+</html>

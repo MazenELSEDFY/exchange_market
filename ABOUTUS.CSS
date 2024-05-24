@@ -1,0 +1,123 @@
+
+#HeaderPhoto {
+  width: 100%;
+  height: 275px;
+  background-image: url('https://assets.delawarebusinesstimes.com/2023/02/Knowledge_Center_Large_Image_Foreign_Exchange_2023.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+#About {
+  background-color: #DAA520;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+
+nav {
+  text-align: center;
+  top: 365px;
+  background-color: #DAA520;
+  border-bottom: 1px solid #ccc;
+  padding: 25px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #ccc;
+}
+
+
+footer {
+  background-color: #DAA520;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+
+#MainCAP {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: #DAA520;
+}
+
+
+li {
+  font-size: 20px;
+}
+
+
+ol {
+  background-color: antiquewhite;
+}
+
+
+a.HEADQUARTERS {
+  color: #DAA520;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.HEADQUARTERS:hover::before {
+  content: attr(title);
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 210px;
+  font-size: x-small;
+}
+#HISTORY {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: #DAA520;
+}
+h5{
+  font-size: 25;
+}
+
+
+.return-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.return-to-top:hover {
+  background-color: #FFD700; 
+}
+

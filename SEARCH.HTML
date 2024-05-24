@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Transaction</title>
+    <link rel="stylesheet" href="SEARCH.css">
+</head>
+<body>
+    <div id="HeaderPhoto"></div>
+    <h2 id="SEARCH">SEARCH</h2>
+    <nav>
+        <ul>
+            <li><a href="ExchangeMarket.html">HOME</a></li>
+            <li><a href="AboutUs.html">ABOUT US</a></li>
+            <li><a href="Convert.html">CONVERT</a></li>
+            <li><a href="SEARCH.HTML">SEARCH</a></li>
+        </ul>
+    </nav>
+    <h2>Search Transaction</h2>
+    <form id="conversionForm" action="SEARCH.PHP" onsubmit="searchTransaction(); return false;">
+        <label for="passport">Enter Passport Number:</label>
+        <input type="text" id="passport" name="passport" required>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
+    <a href="SEARCH.HTML" class="return-to-top">Return to the Top</a>
+
+    <!-- Ensure that the script reference is correct -->
+    <script src="SEARCH.js"></script>
+
+    <footer>
+        <p>Contact us:</p>
+        <a href="mailto:mazen-elsedfy@outlook.com">info@exchangemarket.com<br></a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank"> Instagram<br></a>
+        <p>&copy; 2023 Mazen EL SEDFY</p>
+    </footer>
+</body>
+</html>
